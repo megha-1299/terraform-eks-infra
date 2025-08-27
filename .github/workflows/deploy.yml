@@ -1,1 +1,16 @@
+name: Deploy EKS Infra
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  infra:
+    uses: megha-1299/terraform-shared-ci/.github/workflows/terraform.yml@main
+    with:
+      working_directory: .
+      aws_region: ap-south-1
+      aws_role_arn: ${{ secrets.AWS_ROLE_ARN }}
+      environment: prod
 
