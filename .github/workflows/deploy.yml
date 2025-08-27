@@ -11,6 +11,6 @@ jobs:
     with:
       working_directory: .
       aws_region: ap-south-1
-      aws_role_arn: ${{ secrets.AWS_ROLE_ARN }}
       environment: prod
-
+    secrets:
+      AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
