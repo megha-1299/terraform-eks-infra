@@ -48,13 +48,6 @@ module "eks" {
   }
 }
 
-# Output kubeconfig
-output "kubeconfig" {
-  value       = module.eks.kubeconfig
-  description = "Kubeconfig to access EKS cluster"
-  sensitive   = true
-}
-
 output "cluster_endpoint" {
   value = module.eks.cluster_endpoint
 }
